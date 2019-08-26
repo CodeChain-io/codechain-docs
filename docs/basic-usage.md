@@ -10,8 +10,7 @@ In order to run CodeChain, run
 codechain
 ```
 
-You can create a block by sending a transaction through [JSON-RPC](https://github.com/CodeChain-io/codechain/blob/master/spec/JSON-RPC.md). In order to utilize
-JSON-RPC, you can use Curl or [JavaScript SDK](https://api.codechain.io/).
+You can create a block by sending a transaction through [JSON-RPC](https://github.com/CodeChain-io/codechain/blob/master/spec/JSON-RPC.md). In order to utilize JSON-RPC, you can use Curl or [JavaScript SDK](https://api.codechain.io/).
 
 ## Blockchain Configuration
 
@@ -41,9 +40,7 @@ Then create more nodes, and allocate each node with a secret key that correspond
 codechain --db-path db/db1 --port 3486 --jsonrpc-port 8081 --engine-signer tccqz03jn96q0kvwqzxgeq5u72e2l8v5vkdyq4cll9x -c tendermint
 ```
 
-Once each public key has a corresponding node with a corresponding secret key, use the boostrap address command to interlink all the nodes together.
-The way each node is connected does not matter, as long as each node is connected to another node. For example, in order to make a certain node connect to
-the node with a secret key of 1, use this command:
+Once each public key has a corresponding node with a corresponding secret key, use the boostrap address command to interlink all the nodes together. The way each node is connected does not matter, as long as each node is connected to another node. For example, in order to make a certain node connect to the node with a secret key of 1, use this command:
 
 ```
 codechain --db-path db/db1 --port 3486 --jsonrpc-port 8081 --engine-signer tccqr8a9rqj09j9l6ahe7yq9xfjj8h5xw3p7vpcgner -c tendermint --bootstrap-addresses 127.0.0.1:3485
@@ -83,7 +80,7 @@ curl \
 You should get the following response, or something similar:
 
 ```
-    {"jsonrpc":"2.0","result":"pong","id":null}
+{"jsonrpc":"2.0","result":"pong","id":null}
 ```
 
 ### Using JavaScript SDK
@@ -91,11 +88,11 @@ You should get the following response, or something similar:
 In order to use this method, first install the sdk by running the following:
 
 ```
-    npm install codechain-sdk
+npm install codechain-sdk
 ```
 
 ```
-    yarn add codechain-sdk
+yarn add codechain-sdk
 ```
 
 Then, make sure that your CodeChain RPC server is listening. In the examples, we assume it is localhost:8080
@@ -103,20 +100,20 @@ Then, make sure that your CodeChain RPC server is listening. In the examples, we
 If you run the following code, your should receive a ping response:
 
 ```
-    // ping.js (javascript)
-    var SDK = require("codechain-sdk");
+// ping.js (javascript)
+var SDK = require("codechain-sdk");
 
-    var sdk = new SDK({ server: "http://localhost:8080" });
+var sdk = new SDK({ server: "http://localhost:8080" });
 
-    sdk.rpc.node.ping().then(function (response) {
-        console.log("Ping response:", response);
-    }).catch(console.error);
+sdk.rpc.node.ping().then(function (response) {
+    console.log("Ping response:", response);
+}).catch(console.error);
 ```
 
 If you want to run the above example in the command line, first install `nvm` by running the following:
 
 ```
-    wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 ```
 
 Then run the following:
@@ -128,5 +125,5 @@ node -e 'var SDK = require("codechain-sdk"); var sdk = new SDK({ server: "http:/
 You should receive the following response:
 
 ```
-    Ping response: pong
+Ping response: pong
 ```
