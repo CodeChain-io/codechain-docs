@@ -19,3 +19,8 @@ To go directly to CodeChain's Gitter rooms, click [here](https://gitter.im/CodeC
 - [codechain-exchange](https://gitter.im/CodeChain-io/codechain-exchange): the exchange where various trades of assets can be made.
 
 If you are not sure of which room is suitable for your topic, go to [Lobbby](https://gitter.im/CodeChain-io/Lobby) and make your inquiries there.
+
+### How do I report bugs?
+
+If you have questions whether something is a bug or not, please use our gitter-rooms to ask questions first. If you are certain
+that something is a bug, please report it as an issue at CodeChain's [git page](https://github.com/CodeChain-io). For security issues, please email us at security@codechain.io.
