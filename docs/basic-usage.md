@@ -1,6 +1,6 @@
 # Basic Usage
 
-## Run the Executable
+## Running a node
 
 To get started, you must download the binary file from [this link](https://github.com/codechain-io/codechain/releases).
 
@@ -12,47 +12,15 @@ codechain
 
 You can create a block by sending a transaction through [JSON-RPC](https://github.com/CodeChain-io/codechain/blob/master/spec/JSON-RPC.md). In order to utilize JSON-RPC, you can use Curl or [JavaScript SDK](https://api.codechain.io/).
 
-## Blockchain Configuration
-
-You can run your network using `Solo` or `Tendermint` consensus, or you can join an existing network.
-
-### Solo Configuration
-
-CodeChain uses this configuration as default. In order to change it into another configuration, such as tendermint, run:
-
-```
-codechain --chain tendermint
-```
-
-### Tendermint Configuration
-
-In order to properly get Tendermint to get going, you need to have 4 nodes up and running. To do this, first run a single node by running the following:
-
-```
-codechain --db-path db/db0 --port 3485 --jsonrpc-port 8080 --engine-signer tccqzzpxln6w5zrhmfju3zc53w6w4y6s95mf5hw0n62 -c tendermint
-```
-
-This creates a node in db0 (database 0) at port 3485 (used for nodes to communicate with each other) and jsonRPC port 8080 (port used for external access) with engine signer of tccqzzpxln6w5zrhmfju3zc53w6w4y6s95mf5hw0n62 (used to sign the block).
-
-Then create more nodes, and allocate each node with a secret key that corresponds to one of the four public keys listed in Tendermint's validator property. When creating new nodes, the db, port and jsonRPC port all must be configured as a different value. So for example, the next node should be set up like this:
-
-```
-codechain --db-path db/db1 --port 3486 --jsonrpc-port 8081 --engine-signer tccqz03jn96q0kvwqzxgeq5u72e2l8v5vkdyq4cll9x -c tendermint
-```
-
-Once each public key has a corresponding node with a corresponding secret key, use the boostrap address command to interlink all the nodes together. The way each node is connected does not matter, as long as each node is connected to another node. For example, in order to make a certain node connect to the node with a secret key of 1, use this command:
-
-```
-codechain --db-path db/db1 --port 3486 --jsonrpc-port 8081 --engine-signer tccqr8a9rqj09j9l6ahe7yq9xfjj8h5xw3p7vpcgner -c tendermint --bootstrap-addresses 127.0.0.1:3485
-```
-
-### Connect to the existing network
+## Connecting to the network
 
 You can participate in the Corgi or Main network.
 
 You could get information about Corgi at this [link](https://corgi.codechain.io/). In order to participate in the Corgi network, you should use the command below:
 
-ENABLE_ORDER=true ENABLE_DELEGATIONS=true codechain --chain corgi --no-miner --bootstrap-addresses "35.200.30.13:3485" "35.196.235.61:3485" "35.247.47.240:3485" "35.240.69.133:3485" "34.87.107.91:3485"
+```
+codechain --chain corgi --no-miner --bootstrap-addresses "35.200.30.13:3485" "35.196.235.61:3485" "35.247.47.240:3485" "35.240.69.133:3485" "34.87.107.91:3485"
+```
 
 In order to participate in the Main network, you should use the command below:
 
@@ -60,7 +28,7 @@ In order to participate in the Main network, you should use the command below:
 codechain --no-miner --bootstrap-addresses "13.115.159.65:3485" "18.205.137.116:3485" "13.52.129.93:3485" "18.194.21.237:3485" "13.124.155.240:3485"
 ```
 
-## Checking if CodeChain is Configured Properly
+## Checking if CodeChain is configured properly
 
 JSON-RPC is a stateless, light-weight remote procedure call (RPC) protocol. Primarily this specification defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in many various message passing environments. It uses JSON (RFC 4627) as data format.
 
