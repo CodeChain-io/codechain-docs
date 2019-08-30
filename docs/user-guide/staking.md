@@ -30,16 +30,16 @@ Run the command below:
 ccstake delegate \
   --rpc-server "http://127.0.0.1:8080" \
   --keys-path ./keystore.db
-  --from <Account holding CCS> \
-  --to <Account to delegate> \
+  --account <Account holding CCS> \
+  --delegatee <Account to delegate> \
   --quantity <CCS quantity> \
   --fee 100
 ```
 
 - `--rpc-server`: Since you need to send a transaction to delegate CCS to someone else, you need a CodeChain node that accepts and broadcasts your transaction to the CodeChain network. We recommend you run your own CodeChain node. If you are running a CodeChain node in the same machine with the default RPC port, you can use the address "http://127.0.0.1:8080" in the argument. If you are not running a CodeChain node, you can use a public RPC node, but public RPC nodes are not always available. The main network's public RPC address is "https://rpc.codechain.io". The Corgi network's public RPC address is "https://corgi-rpc.codechain.io".
 - `--keys-path`: To delegate CCS to an account, you should verify that you are the owner of the CCS. CodeChain uses a key file to save your private key. Please specify the key file that has an account that could unlock your account.
-- `--from`: An account that has CCS tokens.
-- `--to`: An account to be delegated.
+- `--account`: An account that has CCS tokens.
+- `--delegatee`: An account to be delegated.
 - `--quantity`: Delegation quantity.
 - `--fee`: Transaction fee.
 
@@ -53,7 +53,7 @@ To revoke a delegation, run the command below:
 ccstake revoke \
   --rpc-server "http://127.0.0.1:8080" \
   --keys-path ./keystore.db
-  --delegator <Account delegated CCS> \
+  --account <Account delegated CCS> \
   --delegatee <Account is delegated CCS> \
   --quantity <CCS quantity> \
   --fee 100
@@ -61,7 +61,7 @@ ccstake revoke \
 
 - `--rpc-server`: Please refer to the explanation above.
 - `--keys-path`: Please refer to the explanation above.
-- `--delegator`: The account that has CCS and delegated CCS to the delegatee.
+- `--account`: The account that has CCS and delegated CCS to the delegatee.
 - `--delegatee`: The account that is delegated CCS.
 - `--quantity`: Revoke quantity.
 - `--fee`: Transaction fee.
@@ -86,14 +86,14 @@ Run the following script to send the encoded transaction information:
 ccstake change-params \
   --rpc-server "http://127.0.0.1:8080" \
   --keys-path ./keystore.db \
-  --fee-payer <Account to pay fee> \
+  --account <Account to pay fee> \
   --fee 1000 \
   --transaction f8e081ff80f8552082040082010082020082626364822710830f4240830186a0822710830186a080821388821388830186a064830186a0830186a0830186a0830186a064834000008240003c81f002031e04830186a08203e8820100b8417659b87bdb10e3fc95b377df0931196d2993a32d767ffd0593e9dcae42ffadc36f8831b021073583398cdf210cee4ad304b754fa69585b352c549232770302ac01b841ab7f0da6964cb544e6ff4ec8bcb41ae4ce6767bf8dd80ccb1f14f7eb16a1d9d6737bf7ef2122f88e23e53fd96172c88d0833d58b05783b74ae7da4447c680b2400
 ```
 
 - `--rpc-server`: Please refer to the explanation above.
 - `--keys-path`: Please refer to the explanation above.
-- `--fee-payer`: The account that sends a transaction to the network, and pays a fee
+- `--account`: The account that sends a transaction to the network, and pays a fee
 - `--fee`: Transaction fee.
 - `--transaction`: A created transaction itself.
 
