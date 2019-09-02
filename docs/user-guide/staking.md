@@ -11,16 +11,16 @@ If you have CCS, you can delegate CCS anytime to any account. The validators are
 Use the command below to install stakeholder CLI:
 
 ```
-yarn global add codechain-stakeholder-cli@alpha
+yarn global add codechain-stakeholder-cli
 ```
 
 or
 
 ```
-npm install -g codechain-stakeholder-cli@alpha
+npm install -g codechain-stakeholder-cli
 ```
 
-If the installation was successful, the result of `ccstake --version` will be `2.0.0-alpha.1`.
+If the installation was successful, the result of `ccstake --version` will be `2.0.0`.
 
 ## How to Delegate CCS
 
