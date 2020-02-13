@@ -12,13 +12,9 @@ Gitter serves as the coworking space where devs share feedback, ask questions, o
 
 To go directly to CodeChain's Gitter rooms, click [here](https://gitter.im/CodeChain-io). We currently have a room for each of the ongoing projects:
 
-- [codechain](https://gitter.im/CodeChain-io/codechain): CodeChain engine related.
-- [codechain-explorer](https://gitter.im/CodeChain-io/codechain-explorer): for looking up information, such as accounts or assets that belong in CodeChain.
-- [codechain-sdk-js](https://gitter.im/CodeChain-io/codechain-sdk-js): JavaScript SDK for CodeChain.
-- [codechain-web-wallet](https://gitter.im/CodeChain-io/codechain-web-wallet): the wallet that CodeChain provides for the user.
-- [codechain-exchange](https://gitter.im/CodeChain-io/codechain-exchange): the exchange where various trades of assets can be made.
-
-If you are not sure of which room is suitable for your topic, go to [Lobbby](https://gitter.im/CodeChain-io/Lobby) and make your inquiries there.
+- [CodeChain](https://gitter.im/CodeChain-io/codechain): CodeChain engine related.
+- [Foundry](https://gitter.im/CodeChain-io/foundry): Foundry related.
+- [Lobby](https://gitter.im/CodeChain-io/Lobby): Other projects.
 
 ### How do I report bugs?
 
